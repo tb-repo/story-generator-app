@@ -23,6 +23,7 @@ def generate_image(prompt: str):
         # Load and return the image
         response = requests.get(image_url)
         return Image.open(BytesIO(response.content))
+        print(image_url)
     except Exception as e:
         st.error(f"Failed to generate image: {str(e)}")
         return None
